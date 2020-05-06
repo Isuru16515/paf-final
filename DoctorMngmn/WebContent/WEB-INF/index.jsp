@@ -1,0 +1,56 @@
+<%@page import="model.DoctorM"%> 
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%> 
+ 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="ISO-8859-1"> 
+<title>Doctor Management</title> 
+<link rel="stylesheet" href="Views/bootstrap.min.css"> 
+<script src="Components/jquery-3.2.1.min.js"></script> 
+<script src="Components/index.js"></script> 
+</head> 
+<body> 
+<div class="container">
+ <div class="row"> <div class="col-6">  
+ <h1>DoctorMngmnt V10.1</h1> 
+ 
+<form id="docId" name="docId" method="post" action="index.jsp">  
+ 
+ ID:   
+ <input id="doctorName" name="doctorName" type="text"     class="form-control form-control-sm"> 
+ 
+ ID:   
+ <input id="pantientID" name="pantientID" type="text"     class="form-control form-control-sm"> 
+ 
+  <br> name:   
+  <input id="pantientName" name="pantientName" type="text"        class="form-control form-control-sm"> 
+ 
+  <br> price:   
+  <input id="date" name="date" type="text"        class="form-control form-control-sm"> 
+ 
+  <br> time:   
+  <input id="time" name="time" type="text"        class="form-control form-control-sm">
+  
+  <br> description:   
+  <input id="des" name="des" type="text"        class="form-control form-control-sm"> 
+ 
+  <br>   
+  <input id="btnSave" name="btnSave" type="button" value="Save"      
+  class="btn btn-primary">   <input type="hidden" id="hiddocIDSave"         
+  name="hiddocDSave" value="">  </form> 
+ 
+ <div id="alertSuccess" class="alert alert-success"></div>  
+ <div id="alertError" class="alert alert-danger"></div> 
+ 
+ <br>  <div id="divItemsGrid">   
+ <%    
+ DoctorM DoctorMObj = new DoctorM();    
+ out.print(DoctorMObj.readDoctorM());   
+ %>  </div>
+ </div>
+ </div>
+ </div>
+ </body>
+ </html>
+ 
